@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Model Deployment</title>
+    </head>
+    <body>
+        <h1>Loan Prediction</h1>
+        <p>
+            Do you Want Loan or Not?
+        </p>
+        <form method="POST" action="/submit">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+            <br>
+            <label for="married">married:</label>
+            <select id="married" name="married">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label for="dependents">Dependents:</label>
+            <select id="dependents" name="dependents">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3+</option>
+            </select>
+            <br>
+            <label for="graduate">Graduate:</label>
+            <select id="graduate" name="graduate">
+                <option value="0">Graduate</option>
+                <option value="1">Not Graduate</option>
+            </select>
+            <br>
+            <label for="employed">Self Employed:</label>
+            <select id="employed" name="employed">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+            <label for="applicantIncome">Applicant Income:</label>
+            <input type="number" name="applicantIncome" />
+            <br>
+            <label for="coApplicantIncome">Coapplicant Income:</label>
+            <input type="number" name="coApplicantIncome" />
+            <br>
+            <label for="loanAmount">Loan Amount:</label>
+            <input type="number" name="loanAmount" />
+            <br>
+            <label for="loanAmountTerm">Loan Amount Term:</label>
+            <input type="number" name="loanAmountTerm" />
+            <br>
+            <label for="creditHistory">Credit History:</label>
+            <input type="number" name="creditHistory" />
+            <br>
+            <label for="propertyArea">Property Area:</label>
+            <select id="propertyArea" name="propertyArea">
+                <option value="0">Urban</option>
+                <option value="1">Semiurban</option>
+                <option value="2">Rural</option>
+            </select>
+            <br>
+            <input type="submit" />
+        </form>
+
+        
+    </body>
+</html>
