@@ -1,19 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <title>Submit Deployment</title>
     </head>
     <body>
-        <h1>Submit Page</h1>
-        <p> {{ gender }}</p>
-        <p>{{ dependents }}</p>
-        <p>{{ graduate }}</p>
-        <p>{{ selfEmployed }}</p>
-        <p>{{ applicantIncome }}</p>
-        <p>{{ coApplicantIncome }}</p>
-        <p>{{ loanAmount }}</p>
-        <p>{{ creditHistory }}</p>
-        <p>{{ propertyArea }}</p>
-        <p>Result: {{loan_pred}} </p>
+        <nav class="navbar navbar-dark bg-primary">
+            <div class="container">
+              <a class="navbar-brand">Loan Prediction</a>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit" >Search</button>
+              </form>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-7">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Married</th>
+                            <th scope="col">Dependents</th>
+                            <th scope="col">Graduate</th>
+                            <th scope="col">Self Employed</th>
+                            <th scope="col">Property Area</th>
+                            <th scope="col">Applicant Income</th>
+                            <th scope="col">Coapplicant Income</th>
+                            <th scope="col">Loan Amount</th>
+                            <th scope="col">Loan Amount Term</th>
+                            <th scope="col">Credit History</th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>{{gender}}</td>
+                            <td>{{married}}</td>
+                            <td>{{dependents}}</td>
+                            <td>{{graduate}}</td>
+                            <td>{{selfEmployed}}</td>
+                            <td>{{propertyArea}}</td>
+                            <td>{{applicantIncome}}</td>
+                            <td>{{coApplicantIncome}}</td>
+                            <td>{{loanAmount}}</td>
+                            <td>{{loanAmountTerm}}</td>
+                            <td>{{creditHistory}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Loan Status</h5>
+                          {% if loan_pred=="Applicable" %}
+
+                          <img src="{{url_for('static', filename='green_tick.png')}}" height="30" width="30" /> 
+                          <p class="card-text" style="color: green; font-size: large; font-weight: bold;">{{loan_pred}}</p>
+                          
+                            {% else %}
+                          <img src="{{url_for('static', filename='red_check.png')}}"  height="30" width="30" /> 
+                            <p class="card-text" style="color: red; font-size: large; font-weight: bold;">{{loan_pred}}</p>
+                          {% endif %}
+                          <a href="/" class="btn btn-primary">Back to Home Page</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                             
+                        </div>
+                      </div>
+
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+          </div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
 </html>
